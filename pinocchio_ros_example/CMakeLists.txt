@@ -13,6 +13,7 @@ find_package(pinocchio REQUIRED)
 
 # Build the executable
 add_executable(pinocchio_example src/pinocchio_example.cpp)
-ament_target_dependencies(pinocchio_example pinocchio Eigen3 eigen3_cmake_module)
+ament_target_dependencies(pinocchio_example Eigen3 eigen3_cmake_module)
+target_link_libraries(pinocchio_example PUBLIC pinocchio::pinocchio)
 
 ament_package()
